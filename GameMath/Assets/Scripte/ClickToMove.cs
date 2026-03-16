@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -6,6 +7,10 @@ public class ClickToMove : MonoBehaviour
     public float moveSpeed = 5f;
     public float dashDistance = 3f;
     public float jumpForce = 5f;
+
+    public float dashSpeed = 20f;
+    public float dashTime = 0.2f;
+    private bool isDashing = false;
 
     private Vector2 mouseScreenPosition;
     private Vector3 targetPosition;
@@ -75,11 +80,28 @@ public class ClickToMove : MonoBehaviour
                 if (magnitude > 0.01f)
                 {
                     dashDirection = dashDirection / magnitude;
-                    transform.position += dashDirection * dashDistance;
+                    StartCoroutine(Dash(dashDirection));
                 }
             }
         }
     }
+    IEnumerator Dash(Vector3 direction)
+    {
+        isDashing = true;
+        isMoving = false;
+
+        float timer = 0f;
+
+        while (timer < dashTime)
+        {
+            transform.Translate(direction * dashSpeed * Time.deltaTime, Space.World);
+            timer += Time.deltaTime;
+            yield return null;
+        }
+
+        isDashing = false;
+    }
+
     public void OnJump(InputValue value)
     {
         if (value.isPressed && isGrounded)
