@@ -13,8 +13,8 @@ public class PlayerMovememt : MonoBehaviour
 
     void Update()
     {
-        Vector3 direction = new Vector3(moveInput.x, moveInput,y, 0);
-        transform.TransLate(directiom*moveSpeed*Time.deltaTiom);
+        Vector3 direction = new Vector3(moveInput.x, moveInput.y, 0);
+        transform.Translate(direction*moveSpeed*Time.deltaTime);
     }
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
