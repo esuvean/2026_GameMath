@@ -777,6 +777,7 @@ GameObject:
   - component: {fileID: 581906391}
   - component: {fileID: 581906392}
   - component: {fileID: 581906393}
+  - component: {fileID: 581906394}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -965,6 +966,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8f50f28c574a80499cf5333b9179e4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MoveDirectionRotate
+--- !u!114 &581906394
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 581906383}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a578a80cd45255349a5e9da273e8607f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FOVVisualizer
+  viewAngle: 60
+  viewDistance: 5
 --- !u!1 &655660216
 GameObject:
   m_ObjectHideFlags: 0

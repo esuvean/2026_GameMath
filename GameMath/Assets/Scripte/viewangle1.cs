@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class angle : MonoBehaviour
+public class viewangle1 : MonoBehaviour
 {
     public Transform player;
 
